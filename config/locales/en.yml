@@ -44,6 +44,8 @@ en:
     csv: "CSV File"
     xls: "XLS File"
     email: "Email:"
+    name: "User name:"
+    birthday: "Birthday:"
     position: "Positions:"
     skill: "Skills:"
     not_admin: "You are not admin,login please!"
@@ -87,6 +89,8 @@ en:
     leader: "Leader"
     add: "Add Skill"
     submit: "Submit"
+    level: "Level"
+    year: "Year"
   project:
     create: "Project was successfully created!"
     update: "Project was successfully updated!"
@@ -112,6 +116,7 @@ en:
     listing_position: "Listing positions"
     name: "Name"
     abb: "Abbreviation"
+    start_date: "Start_date"
   team:
     create: "Team was successfully created."
     update: "Team was successfully updated."

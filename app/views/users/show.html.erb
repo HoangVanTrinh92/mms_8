@@ -1,11 +1,52 @@
-<div>
+<div class="user-information">
+  <%= t "user.name" %>
+  <%= @user.name %>
+  <br>
   <%= t "user.email" %>
   <%= @user.email %>
   <br>
+  <%= t "user.birthday" %>
+  <%= @user.birthday %>
+  <br>
   <%= t "user.skill" %>
-  <% @user.skills.each do |skill| %>
-    <li><%= skill.name %></li>
-  <% end %>
+  <table>
+    <thead class="t-header">
+      <tr>
+        <th><%= t "skill.name" %></th>
+        <th><%= t "skill.level" %></th>
+        <th><%= t "skill.year" %></th>
+      </tr>
+    </thead>
+    <tbody class="t-body">
+      <% @user.skill_users.each do |s| %>
+        <tr>
+          <td><%= s.skill.name %></td>
+          <td><%= s.level %></td>
+          <td><%= s.year %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= t "user.position" %>
+  <table>
+    <thead class="t-header">
+      <tr>
+        <th><%= t "position.name" %></th>
+        <th><%= t "position.start_date" %></th>
+      </tr>
+    </thead>
+    <tbody class="t-body">
+      <% @user.position_users.each do |p| %>
+        <tr>
+          <td><%= p.position.name %></td>
+          <td><%= p.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
 </div>
 <%= link_to t("team.all_team"), teams_path %><br/>
-<%= link_to t("skill.add"), user_skills_path(@user), class:"btn btn-success btn-sm" %>
+<%= link_to t("skill.add"), user_skills_path(@user), class: "btn btn-success btn-sm" %>
+<%= link_to t("user.add_position"), admin_user_position_users_path(@user), class: "btn btn-success btn-sm" %>
