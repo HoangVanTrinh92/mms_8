@@ -24,6 +24,9 @@ gem "slim"
 gem "redis-rails"
 gem "bootstrap-datepicker-rails"
 gem "whenever", require: false
+gem "omniauth-facebook" # Facebook authentication
+gem "koala", "~> 1.10.0rc" # Facebook API
+
 
 group :development, :test do
   gem "rspec-rails"

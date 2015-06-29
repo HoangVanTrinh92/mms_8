@@ -27,4 +27,10 @@ class User < ActiveRecord::Base
   Settings.roles.each do |v|
     define_method("is_#{v}?") {role == v}
   end
+
+  def self.koala(auth)
+    access_token = auth['token']
+    facebook = Koala::Facebook::API.new(access_token)
+    facebook.get_object("me?fields=name,picture")
+  end
 end

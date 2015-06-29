@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get "static_pages/help"
   get "static_pages/about"
 
+  get 'auth/facebook', as: "auth_provider"
+  get 'auth/facebook/callback', to: 'users#login'
+
   namespace :admin do
     root "users#index"
     get "team_users/new"

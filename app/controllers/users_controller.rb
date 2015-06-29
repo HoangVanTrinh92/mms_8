@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @teams = @user.teams
   end
 
+  def login
+    @user = User.koala(request.env['omniauth.auth']['credentials'])
+  end
+
   def update
     if @user.update_attributes user_params
       respond_to do |format|

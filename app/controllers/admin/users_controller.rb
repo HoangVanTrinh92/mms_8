@@ -8,6 +8,10 @@ class Admin::UsersController < ApplicationController
     @activities = Activity.all
   end
 
+  def login
+    @user = User.koala(request.env['omniauth.auth']['credentials'])
+  end
+
   def show
     @user = User.find params[:id]
     @positions = @user.positions
